@@ -74,6 +74,9 @@ public class PasswordAuthorizationServiceImpl implements AuthorizationService {
     }
     String clientId = fsd.getClientId();
     String clientSecret = fsd.getClientSecret();
+    if(clientSecret==null){
+      clientSecret="";
+    }
 
     HttpHeaders headers = new HttpHeaders();
     headers.setBasicAuth(clientId, clientSecret);
