@@ -158,7 +158,9 @@ public class FhirContextInitializer {
       client.registerInterceptor(new LoggingInterceptor(true));
     }
     if (retryTemplate.isRetryEnabled()) {
-      logger.info("Initialized the Retryable Client with X-Request-ID: {}", requestId);
+      logger.info(
+          "Initialized the Retryable Client with X-Request-ID: {}",
+          requestId);
       return new EcrFhirRetryClient(client, retryTemplate, requestId, EventTypes.QueryType.NONE);
     }
     logger.trace(
