@@ -17,6 +17,8 @@ services:
       logging.level.ca.uhn.fhir.: INFO
       logging.level.org.apache.http: INFO
       SECURITY_KEY: asdfqwer1234
+      SCHEDULED_TASK_FILE_PATH: scheduledTask.json
+      DIRECT_TLS_VERSION: TLSv1.2
 
     volumes:
 #      - ~/Projects/eCRNow/kars:/usr/ecrnow/kars

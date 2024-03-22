@@ -32,7 +32,7 @@ public class ScheduledTaskUtil {
 
   @Autowired private SchedulerDao schedulerDao;
 
-  @Value("${scheduled.task.file.path}")
+  @Value("${scheduled.task.file.path:.}")
   private String scheduledTaskFilePath;
 
   private final ObjectMapper objectMapper = new ObjectMapper();
