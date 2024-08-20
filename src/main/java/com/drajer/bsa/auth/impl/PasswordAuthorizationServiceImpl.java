@@ -8,6 +8,7 @@ import java.security.KeyStoreException;
 import java.util.Objects;
 import javax.transaction.Transactional;
 import net.minidev.json.JSONArray;
+import org.apache.commons.text.StringEscapeUtils;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -53,7 +54,9 @@ public class PasswordAuthorizationServiceImpl implements AuthorizationService {
       return connectToServer(baseUrl, fsd);
     } catch (Exception e) {
       logger.error(
-          "Error in Getting the AccessToken for the client: {}", fsd.getFhirServerBaseURL(), e);
+          "Error in Getting the AccessToken for the client: {}",
+          StringEscapeUtils.escapeJava(fsd.getFhirServerBaseURL()),
+          e);
       return null;
     }
   }
@@ -74,8 +77,8 @@ public class PasswordAuthorizationServiceImpl implements AuthorizationService {
     }
     String clientId = fsd.getClientId();
     String clientSecret = fsd.getClientSecret();
-    if(clientSecret==null){
-      clientSecret="";
+    if (clientSecret == null) {
+      clientSecret = "";
     }
 
     HttpHeaders headers = new HttpHeaders();
@@ -119,7 +122,10 @@ public class PasswordAuthorizationServiceImpl implements AuthorizationService {
                     + ".extension[?(@.url == 'token')].valueUri");
         return result.get(0).toString();
       } catch (Exception e2) {
-        logger.error("Error in Getting the TokenEndpoint for the client: {}", url, e2);
+        logger.error(
+            "Error in Getting the TokenEndpoint for the client: {}",
+            StringEscapeUtils.escapeJava(url),
+            e2);
         throw e1;
       }
     }

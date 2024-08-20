@@ -111,6 +111,8 @@
 <templateId root="2.16.840.1.113883.10.20.22.4.1" extension="2015-08-01"/>
 <id root="b56b6d6d-7d6e-4ff4-9e5c-f8625c7babe9"/><code code="68518-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"></code>
 <statusCode code="completed"/>
+<effectiveTime>
+<effectiveTime value="20200428194229+0000"/><effectiveTime value="20200428194229+0000"/></effectiveTime>
 <component>
 <observation classCode="OBS" moodCode="EVN">
 <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
@@ -136,6 +138,8 @@
 <templateId root="2.16.840.1.113883.10.20.22.4.1" extension="2015-08-01"/>
 <id root="b56b6d6d-7d6e-4ff4-9e5c-f8625c7babe9"/><code code="72166-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"></code>
 <statusCode code="completed"/>
+<effectiveTime>
+<effectiveTime value="20200428194229+0000"/><effectiveTime value="20200428194229+0000"/></effectiveTime>
 <component>
 <observation classCode="OBS" moodCode="EVN">
 <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
@@ -158,6 +162,8 @@
 <templateId root="2.16.840.1.113883.10.20.22.4.1" extension="2015-08-01"/>
 <id root="b56b6d6d-7d6e-4ff4-9e5c-f8625c7babe9"/><code code="72166-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"></code>
 <statusCode code="completed"/>
+<effectiveTime>
+<effectiveTime value="20200428194229+0000"/><effectiveTime value="20200428194229+0000"/></effectiveTime>
 <component>
 <observation classCode="OBS" moodCode="EVN">
 <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
@@ -180,6 +186,8 @@
 <templateId root="2.16.840.1.113883.10.20.22.4.1" extension="2015-08-01"/>
 <id root="b56b6d6d-7d6e-4ff4-9e5c-f8625c7babe9"/><code code="94500-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"></code>
 <statusCode code="completed"/>
+<effectiveTime>
+<effectiveTime value="20200428194229+0000"/><effectiveTime value="20200428194229+0000"/></effectiveTime>
 <component>
 <observation classCode="OBS" moodCode="EVN">
 <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
@@ -190,8 +198,7 @@
 </originalText>
 </code>
 <statusCode code="completed"/>
-<effectiveTime value="20200430082500+0000"/>
-<value xsi:type="CD" code="260373001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Detected (qualifier value)"><originalText>
+<effectiveTime value="20200428194229+0000"/><value xsi:type="CD" code="260373001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Detected (qualifier value)"><originalText>
 <reference value="#labTestName4"/>
 </originalText>
 </value>
@@ -207,6 +214,8 @@
 <id root="b56b6d6d-7d6e-4ff4-9e5c-f8625c7babe9"/><code code="8302-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"><translation code="3137-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
 </code>
 <statusCode code="completed"/>
+<effectiveTime>
+<effectiveTime value="20200428194229+0000"/><effectiveTime value="20200428194229+0000"/></effectiveTime>
 <component>
 <observation classCode="OBS" moodCode="EVN">
 <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
@@ -217,8 +226,7 @@
 </originalText>
 </code>
 <statusCode code="completed"/>
-<effectiveTime value="20200429133200+0000"/>
-<value xsi:type="PQ" value="162.56" unit="cm"/>
+<effectiveTime value="20200428194229+0000"/><value xsi:type="PQ" value="162.56" unit="cm"/>
 </observation>
 </component>
 </organizer>
@@ -230,6 +238,8 @@
 <id root="b56b6d6d-7d6e-4ff4-9e5c-f8625c7babe9"/><code code="79348-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"><translation code="29463-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
 </code>
 <statusCode code="completed"/>
+<effectiveTime>
+<effectiveTime value="20200428194229+0000"/><effectiveTime value="20200428194229+0000"/></effectiveTime>
 <component>
 <observation classCode="OBS" moodCode="EVN">
 <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
@@ -241,8 +251,7 @@
 <translation code="29463-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
 </code>
 <statusCode code="completed"/>
-<effectiveTime value="20200429133200+0000"/>
-<value xsi:type="PQ" value="70.3" unit="kg"/>
+<effectiveTime value="20200428194229+0000"/><value xsi:type="PQ" value="70.3" unit="kg"/>
 </observation>
 </component>
 </organizer>
