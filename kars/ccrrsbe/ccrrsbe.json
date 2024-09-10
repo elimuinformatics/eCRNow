@@ -191,7 +191,7 @@
                     "kind": "applicability",
                     "expression": {
                       "language": "text/fhirpath",
-                      "expression": "%patient.deceased[x] == null"
+                      "expression": "%patient.deceased.empty()"
                     }
                   }
                 ],
