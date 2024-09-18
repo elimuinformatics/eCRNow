@@ -347,6 +347,8 @@ public class FhirPathProcessor implements BsaConditionProcessor {
 
           Resource vsr =
               kd.getKar().getDependentResource(ResourceType.ValueSet, drcf.getValueSet());
+          HashMap<String, Resource> foundVSets = kd.getKar().getDependencies().get(ResourceType.ValueSet);
+          logger.info("Found exisintg ValueSets:"+ foundVSets.keySet());
 
           if (vsr != null) {
             logger.debug(" Found Value Set {} to compare codes.", vsr.getId());
