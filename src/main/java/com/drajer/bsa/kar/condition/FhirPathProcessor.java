@@ -374,7 +374,7 @@ public class FhirPathProcessor implements BsaConditionProcessor {
               logger.debug(" No match found for code ");
             }
           } else {
-            logger.error(" Value Set not found for id {}", drcf.getValueSet());
+            logger.error(" Value Set not found for id {} for KarID {}", drcf.getValueSet(), kd.getKar().getKarId());
           }
         } else {
 
