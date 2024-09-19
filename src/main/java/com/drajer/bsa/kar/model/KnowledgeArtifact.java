@@ -123,6 +123,7 @@ public class KnowledgeArtifact {
         logger.info(" Value Set already present ");
       } else if (res.getUrl() != null) {
         resources.put(res.getUrl(), res);
+        logger.info(" Value Set aadded: "+res.getUrl());
         dependencies.put(res.getResourceType(), resources);
       }
     } else if (res.getUrl() != null) {
