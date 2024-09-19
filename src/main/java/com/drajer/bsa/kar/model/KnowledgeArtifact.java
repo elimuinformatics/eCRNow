@@ -130,6 +130,7 @@ public class KnowledgeArtifact {
       logger.info("Resource Type does not exist, so add to map ");
       HashMap<String, Resource> resources = new HashMap<>();
       resources.put(res.getUrl(), res);
+      logger.info(" Value Set aadded: "+res.getUrl());
       dependencies.put(res.getResourceType(), resources);
     }
   }
