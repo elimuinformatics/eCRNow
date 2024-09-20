@@ -413,6 +413,10 @@ public class KarParserImpl implements KarParser {
         }
       }
 
+      logger.info("Finished parsing KAR for KarId {}", art.getKarId());
+      HashMap<String, org.hl7.fhir.r4.model.Resource> foundValueSets = art.getDependencies().get(ResourceType.ValueSet);
+
+
       /**
        * for (HealthcareSetting healthcareSetting : allHealthcareSettings) { KarProcessingData kd =
        * makeData(healthcareSetting, art); subscriptionGeneratorService.createSubscriptions(kd); }
