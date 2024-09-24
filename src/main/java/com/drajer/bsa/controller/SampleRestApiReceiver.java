@@ -1,10 +1,9 @@
 package com.drajer.bsa.controller;
 
 import com.drajer.bsa.model.RestApiBody;
+import com.drajer.bsa.service.KarParser;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.drajer.bsa.service.KarParser;
 import org.apache.commons.text.StringEscapeUtils;
 import org.json.JSONObject;
 import org.slf4j.Logger;
@@ -44,12 +43,11 @@ public class SampleRestApiReceiver {
     return responseObject;
   }
 
-  @Autowired
-  KarParser parser;
+  @Autowired KarParser parser;
 
   @CrossOrigin
   @GetMapping(value = "/api/karReload")
-  public String reloadKars(){
+  public String reloadKars() {
     parser.loadKars();
     return "done";
   }
