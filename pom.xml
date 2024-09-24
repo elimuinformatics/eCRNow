@@ -248,7 +248,6 @@
 			<version>2.13.3</version>
 		</dependency>
 
-
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
@@ -344,8 +343,13 @@
 			<scope>test</scope>
 		</dependency>
 
-	
-
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>3.3.3</version>
+			<scope>test</scope>
+		</dependency>
 		<!-- Spring Boot Test -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -635,6 +639,7 @@
 					--add-opens=java.base/java.time.format=ALL-UNNAMED
 					--add-opens
 					java.base/java.text=ALL-UNNAMED
+					--add-opens java.base/java.util.stream=ALL-UNNAMED
 				</argLine>
 
 
