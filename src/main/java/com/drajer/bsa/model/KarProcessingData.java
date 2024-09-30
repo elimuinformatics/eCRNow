@@ -726,6 +726,8 @@ public class KarProcessingData {
 
   public Set<Resource> getDataForId(String dataReqId, Map<String, String> relatedDataIds) {
 
+    logger.info("GetDataFor {}", dataReqId);
+    logger.info("Available IDs: {}", relatedDataIds.keySet());
     Set<Resource> resources = null;
 
     if (relatedDataIds != null && relatedDataIds.containsKey(dataReqId)) {
