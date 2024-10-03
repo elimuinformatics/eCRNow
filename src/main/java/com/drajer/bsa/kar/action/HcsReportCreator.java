@@ -4,7 +4,6 @@ import com.drajer.bsa.ehr.service.EhrQueryService;
 import com.drajer.bsa.kar.model.BsaAction;
 import com.drajer.bsa.model.BsaTypes;
 import com.drajer.bsa.model.BsaTypes.MessageType;
-import com.drajer.bsa.model.BsaTypes.SectionTypeEnum;
 import com.drajer.bsa.model.HealthcareSetting;
 import com.drajer.bsa.model.KarProcessingData;
 import com.drajer.bsa.utils.ReportGenerationUtils;

@@ -6,7 +6,6 @@ import com.drajer.bsa.model.BsaTypes;
 import com.drajer.bsa.model.BsaTypes.ActionType;
 import com.drajer.bsa.model.BsaTypes.MessageType;
 import com.drajer.bsa.model.BsaTypes.OutputContentType;
-import com.drajer.bsa.model.BsaTypes.SectionTypeEnum;
 import com.drajer.bsa.model.KarProcessingData;
 import com.drajer.bsa.utils.BsaServiceUtils;
 import com.drajer.bsa.utils.R3ToR2DataConverterUtils;
