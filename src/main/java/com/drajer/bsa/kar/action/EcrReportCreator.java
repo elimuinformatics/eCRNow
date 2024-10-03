@@ -106,6 +106,28 @@ public class EcrReportCreator extends ReportCreator {
 
   private final Logger logger = LoggerFactory.getLogger(EcrReportCreator.class);
 
+  public enum SectionTypeEnum {
+    REASON_FOR_VISIT,
+    CHIEF_COMPLAINT,
+    HISTORY_OF_PRESENT_ILLNESS,
+    REVIEW_OF_SYSTEMS,
+    PROBLEM,
+    MEDICAL_HISTORY,
+    MEDICATION_ADMINISTERED,
+    ADMISSION_MEDICATIONS,
+    MEDICATIONS,
+    RESULTS,
+    PLAN_OF_TREATMENT,
+    SERVICE_REQUEST,
+    IMMUNIZATIONS,
+    PROCEDURES,
+    VITAL_SIGNS,
+    SOCIAL_HISTORY,
+    PREGNANCY,
+    REPORTABILITY_RESPONSE,
+    EMERGENCY_OUTBREAK_SECTION
+  }
+
   @Override
   public Resource createReport(
       KarProcessingData kd,
