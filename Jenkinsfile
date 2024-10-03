@@ -37,30 +37,22 @@ pipeline {
         sh 'docker run -v /var/run/docker.sock:/var/run/docker.sock $AWS_ENV $GIT_ENV cicd push $SERVICE_NAME'
       }
     }
-    stage('Environments') {
-      parallel {
-        stage('Consulting') {
-          stages {
-            stage('Deploy') {
-              steps {
-                echo 'Deploying to DEV'
-                sh 'docker run -v /var/run/docker.sock:/var/run/docker.sock $AWS_ENV $GIT_ENV cicd deploy $SERVICE_NAME consulting $GIT_COMMIT'
-              }
-            }
-            stage('Wait') {
-              steps {
-                echo 'Waiting for DEV service to reach steady state'
-                sh 'docker run -v /var/run/docker.sock:/var/run/docker.sock $AWS_ENV cicd wait $SERVICE_NAME consulting'
-              }
-            }
-            stage('Healthcheck') {
-              steps {
-                echo 'Checking health of DEV service'
-                sh 'curl -m 10 https://medmorph.elimuinformatics.com/actuator/health'
-              }
-            }
-          }
-        }
+    stage('Deploy') {
+      steps {
+        echo 'Deploying to DEV'
+        sh 'docker run -v /var/run/docker.sock:/var/run/docker.sock $AWS_ENV $GIT_ENV cicd deploy $SERVICE_NAME consulting $GIT_COMMIT'
+      }
+    }
+    stage('Wait') {
+      steps {
+        echo 'Waiting for DEV service to reach steady state'
+        sh 'docker run -v /var/run/docker.sock:/var/run/docker.sock $AWS_ENV cicd wait $SERVICE_NAME consulting'
+      }
+    }
+    stage('Healthcheck') {
+      steps {
+        echo 'Checking health of DEV service'
+        sh 'curl -m 10 https://medmorph.elimuinformatics.com/actuator/health'
       }
     }
   }
