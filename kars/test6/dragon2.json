@@ -1,650 +1,493 @@
 {
-  "resourceType": "Bundle",
-  "id": "central-cancer-registry-reporting-specification-bundle-example",
-  "meta": {
-    "versionId": "1",
-    "lastUpdated": "2020-11-29T02:03:28.045+00:00",
-    "profile": [
-      "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-specification-bundle"
-    ]
+  "resourceType" : "Bundle",
+  "id" : "central-cancer-registry-reporting-specification-bundle-example",
+  "meta" : {
+    "versionId" : "1",
+    "lastUpdated" : "2020-11-29T02:03:28.045+00:00",
+    "profile" : ["http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-specification-bundle"]
   },
-  "type": "collection",
-  "timestamp": "2020-11-20T11:15:33-10:00",
-  "entry": [
-    {
-      "fullUrl": "http://hl7.org/fhir/us/central-cancer-registry-reporting/ValueSet/cancer-core-reportability-codes",
-      "resource": {
-        "resourceType": "ValueSet",
-        "id": "cancer-core-reportability-codes",
-        "text": {
-          "status": "generated"
-        },
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
-            "valueCode": "pher"
-          }
-        ],
-        "url": "http://hl7.org/fhir/us/central-cancer-registry-reporting/ValueSet/cancer-core-reportability-codes",
-        "identifier": [
-          {
-            "system": "urn:ietf:rfc:3986",
-            "value": "urn:oid:2.16.840.1.113883.4.642.40.40.48.1"
-          }
-        ],
-        "version": "1.0.0",
-        "name": "CancerCoreReportabilityCodes",
-        "title": "Cancer Core Reportability Codes",
-        "status": "active",
-        "experimental": false,
-        "date": "2021-11-22",
-        "publisher": "HL7 International / Public Health",
-        "contact": [
-          {
-            "telecom": [
-              {
-                "system": "url",
-                "value": "http://www.hl7.org/Special/committees/pher"
-              }
-            ]
-          }
-        ],
-        "description": "The valueset contains SNOMED-CT and ICD-10-CM codes for Cancer Core Reportability determination. These are just sample codes and the actual value set will be    published by the Central Cancer Registry.",
-        "jurisdiction": [
-          {
-            "coding": [
-              {
-                "system": "urn:iso:std:iso:3166",
-                "code": "US"
-              }
-            ]
-          }
-        ],
-        "copyright": "This value set includes content from:\n  1. This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement.  2. ICD-9 and ICD-10 are copyrighted by the World Health Organization (WHO) which owns and publishes the classification. See https://www.who.int/classifications/icd/en. WHO has authorized the development of an adaptation of ICD-9 and ICD-10 to ICD-9-CM to ICD-10-CM for use in the United States for U.S. government purposes.\n",
-        "compose": {
-          "include": [
+  "type" : "collection",
+  "timestamp" : "2020-11-20T11:15:33-10:00",
+  "entry" : [{
+    "fullUrl" : "http://hl7.org/fhir/us/central-cancer-registry-reporting/ValueSet/cancer-core-reportability-codes",
+    "resource" : {
+      "resourceType" : "ValueSet",
+      "id" : "cancer-core-reportability-codes",
+      "text" : {
+        "status" : "generated",
+        "div" : "placeholder"
+      },
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+        "valueCode" : "pher"
+      }],
+      "url" : "http://hl7.org/fhir/us/central-cancer-registry-reporting/ValueSet/cancer-core-reportability-codes",
+      "identifier" : [{
+        "system" : "urn:ietf:rfc:3986",
+        "value" : "urn:oid:2.16.840.1.113883.4.642.40.40.48.1"
+      }],
+      "version" : "1.0.0",
+      "name" : "CancerCoreReportabilityCodes",
+      "title" : "Cancer Core Reportability Codes",
+      "status" : "active",
+      "experimental" : false,
+      "date" : "2021-11-22",
+      "publisher" : "HL7 International / Public Health",
+      "contact" : [{
+        "telecom" : [{
+          "system" : "url",
+          "value" : "http://www.hl7.org/Special/committees/pher"
+        }]
+      }],
+      "description" : "The valueset contains SNOMED-CT and ICD-10-CM codes for Cancer Core Reportability determination. These are just sample codes and the actual value set will be    published by the Central Cancer Registry.",
+      "jurisdiction" : [{
+        "coding" : [{
+          "system" : "urn:iso:std:iso:3166",
+          "code" : "US"
+        }]
+      }],
+      "copyright" : "This value set includes content from:\n  1. This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement.  2. ICD-9 and ICD-10 are copyrighted by the World Health Organization (WHO) which owns and publishes the classification. See https://www.who.int/classifications/icd/en. WHO has authorized the development of an adaptation of ICD-9 and ICD-10 to ICD-9-CM to ICD-10-CM for use in the United States for U.S. government purposes.\n",
+      "compose" : {
+        "include" : [{
+          "system" : "http://snomed.info/sct",
+          "version" : "2024-03",
+          "concept" : [{
+            "code" : "109841003",
+            "display" : "Liver cell carcinoma (disorder)"
+          },
             {
-              "system": "http://snomed.info/sct",
-              "version": "2024-03",
-              "concept": [
-                {
-                  "code": "109841003",
-                  "display": "Liver cell carcinoma (disorder)"
-                },
-                {
-                  "code": "94391008",
-                  "display": "Metastatic malignant neoplasm to lung (disorder)"
-                },
-                {
-                  "code": "417181009",
-                  "display": "Hormone receptor positive malignant neoplasm of breast (disorder)"
-                },
-                {
-                  "code": "424993006",
-                  "display": "Adenocarcinoma of lung, stage IV (disorder)"
-                },
-                {
-                  "code": "353431000119107",
-                  "display": "Primary malignant neoplasm of female left breast (disorder)"
-                },
-                {
-                  "code": "363358000",
-                  "display": "Malignant tumor of lung (disorder)"
-                },
-                {
-                  "code": "722546002",
-                  "display": "Unknown Code"
-                }
-              ]
-            }
-          ]
-        },
-        "expansion": {
-          "timestamp": "2024-07-01T16:17:46-04:00",
-          "contains": [
-            {
-              "system": "http://snomed.info/sct",
-              "version": "2024-03",
-              "code": "109841003"
+              "code" : "94391008",
+              "display" : "Metastatic malignant neoplasm to lung (disorder)"
             },
             {
-              "system": "http://snomed.info/sct",
-              "version": "2024-03",
-              "code": "94391008"
+              "code" : "417181009",
+              "display" : "Hormone receptor positive malignant neoplasm of breast (disorder)"
             },
             {
-              "system": "http://snomed.info/sct",
-              "version": "2024-03",
-              "code": "417181009"
+              "code" : "424993006",
+              "display" : "Adenocarcinoma of lung, stage IV (disorder)"
             },
             {
-              "system": "http://snomed.info/sct",
-              "version": "2024-03",
-              "code": "424993006"
+              "code" : "353431000119107",
+              "display" : "Primary malignant neoplasm of female left breast (disorder)"
             },
             {
-              "system": "http://snomed.info/sct",
-              "version": "2024-03",
-              "code": "353431000119107"
+              "code" : "363358000",
+              "display" : "Malignant tumor of lung (disorder)"
             },
             {
-              "system": "http://snomed.info/sct",
-              "version": "2024-03",
-              "code": "363358000"
-            },
-            {
-              "system": "http://snomed.info/sct",
-              "version": "2024-03",
-              "code": "722546002"
-            }
-          ]
-        }
-      }
-    },
-    {
-      "fullUrl": "http://hl7.org/fhir/us/central-cancer-registry-reporting/PlanDefinition/pccrre",
-      "resource": {
-        "resourceType": "PlanDefinition",
-        "id": "pccrre",
-        "meta": {
-          "versionId": "1",
-          "lastUpdated": "2020-11-29T02:03:28.045+00:00",
-          "profile": [
-            "http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-plandefinition"
-          ]
+              "code" : "722546002",
+              "display" : "Unknown Code"
+            }]
+        }]
+      },
+      "expansion" : {
+        "timestamp" : "2024-07-01T16:17:46-04:00",
+        "contains" : [{
+          "system" : "http://snomed.info/sct",
+          "version" : "2024-03",
+          "code" : "109841003"
         },
-        "text": {
-          "status": "extensions",
-          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>Receiver Endpoint Address</b>: <a>Generated Summary: id: example-endpoint; status: active; <span title=\"{http://terminology.hl7.org/CodeSystem/endpoint-connection-type hl7-fhir-rest}\">HL7 FHIR</span>; name: PHAReceiver; endpointmanager@example.pha.org; period: 2020-11-20 --&gt; (ongoing); <span title=\"Codes: {http://hl7.org/fhir/resource-types Bundle}\">Bundle</span>; payloadMimeType: application/fhir+xml, payloadMimeType: application/fhir+json; address: http://example.pha.org/fhir</a></p><p><b>Author Signature</b>: </p><p><b style=\"color: maroon\">Exception generating Narrative: type org.hl7.fhir.r5.model.Signature not handled - should not be here</b></p></div>"
-        },
-        "extension": [
           {
-            "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-receiver-endpoint",
-            "valueReference": {
-              "reference": "Endpoint/example-ph-endpoint"
-            }
-          }
-        ],
-        "url": "http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/pccrre",
-        "version": "1.0",
-        "name": "CentralCancerRegistryReportingExample",
-        "title": "PlanDefinition Central Cancer Registry Reporting Example",
-        "type": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
-              "code": "workflow-definition",
-              "display": "Workflow Definition"
-            }
-          ]
-        },
-        "status": "draft",
-        "experimental": true,
-        "date": "2020-11-04T12:32:29.858-05:00",
-        "publisher": "HL7 Public Health Work Group",
-        "description": "This is the Healthcare Survey Reporting Knowledge Artifact",
-        "effectivePeriod": {
-          "start": "2021-11-01"
-        },
-        "relatedArtifact": [
-          {
-            "type": "depends-on",
-            "label": "Central Cancer Registry Trigger Codes",
-            "resource": "http://hl7.org/fhir/us/central-cancer-registry-reporting/ValueSet/cancer-core-reportability-codes"
-          }
-        ],
-        "action": [
-          {
-            "id": "start-workflow",
-            "description": "This action represents the start of the reporting workflow in response to the encounter-end event",
-            "textEquivalent": "Start the reporting workflow in response to an encounter-end event",
-            "code": [
-              {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
-                    "code": "initiate-reporting-workflow"
-                  }
-                ]
-              }
-            ],
-            "trigger": [
-              {
-                "id": "encounter-close",
-                "extension": [
-                  {
-                    "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-named-eventtype",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-triggerdefinition-namedevents",
-                          "code": "encounter-end",
-                          "display": "Indicates the end of an encounter"
-                        }
-                      ]
-                    }
-                  }
-                ],
-                "type": "named-event",
-                "name": "encounter-end"
-              }
-            ],
-            "relatedAction": [
-              {
-                "actionId": "check-reportable",
-                "relationship": "before-start",
-                "offsetDuration": {
-                  "value": 72,
-                  "system": "http://unitsofmeasure.org",
-                  "code": "s"
-                }
-              }
-            ]
+            "system" : "http://snomed.info/sct",
+            "version" : "2024-03",
+            "code" : "94391008"
           },
           {
-            "id": "check-reportable",
-            "description": "This action represents the check for suspected reportability of the cancer data.",
-            "textEquivalent": "Check Reportability and setup jobs for future reportability checks.",
-            "code": [
-              {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
-                    "code": "execute-reporting-workflow"
-                  }
-                ]
-              }
-            ],
-            "action": [
-              {
-                "id": "is-encounter-reportable",
-                "description": "This action represents the check for reportability to create the patients eICR.",
-                "textEquivalent": "Check Trigger Codes based on RCTC Value sets.",
-                "code": [
-                  {
-                    "coding": [
-                      {
-                        "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
-                        "code": "check-trigger-codes"
-                      }
-                    ]
-                  }
-                ],
-                "condition": [
-                  {
-                    "kind": "applicability",
-                    "expression": {
-                      "language": "text/fhirpath",
-                      "expression": "%conditions.exists()"
-                    }
-                  }
-                ],
-                "input": [
-                  {
-                    "id": "conditions",
-                    "extension": [
-                      {
-                        "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
-                        "valueString": "Condition?patient=Patient/{{context.patientId}}"
-                      }
-                    ],
-                    "type": "Condition",
-                    "codeFilter": [
-                      {
-                        "path": "code",
-                        "valueSet": "http://hl7.org/fhir/us/central-cancer-registry-reporting/ValueSet/cancer-core-reportability-codes"
-                      }
-                    ]
-                  }
-                ],
-                "relatedAction": [
-                  {
-                    "actionId": "report-cancer-data",
-                    "relationship": "before-start"
-                  }
-                ]
-              },
-              {
-                "id": "should-continue-reporting",
-                "code": [
-                  {
-                    "coding": [
-                      {
-                        "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
-                        "code": "evaluate-condition"
-                      }
-                    ]
-                  }
-                ],
-                "condition": [
-                  {
-                    "kind": "applicability",
-                    "expression": {
-                      "language": "text/fhirpath",
-                      "expression": "%patient.deceased.empty()"
-                    }
-                  }
-                ],
-                "input": [
-                  {
-                    "id": "patient",
-                    "extension": [
-                      {
-                        "url": "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
-                        "valueString": "Patient/{{context.patientId}}"
-                      }
-                    ],
-                    "type": "Patient"
-                  }
-                ],
-                "relatedAction": [
-                  {
-                    "actionId": "check-reportable",
-                    "relationship": "before-start",
-                    "offsetDuration": {
-                      "value": 6,
-                      "system": "http://unitsofmeasure.org",
-                      "code": "m"
-                    }
-                  }
-                ]
-              }
-            ]
+            "system" : "http://snomed.info/sct",
+            "version" : "2024-03",
+            "code" : "417181009"
           },
           {
-            "id": "report-cancer-data",
-            "description": "This action represents the creation, validation and submission of the cancer report.",
-            "textEquivalent": "Check Reportability and setup jobs for future reportability checks.",
-            "code": [
-              {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
-                    "code": "execute-reporting-workflow"
-                  }
-                ]
-              }
-            ],
-            "action": [
-              {
-                "id": "create-cancer-report",
-                "description": "This action represents the creation of the cancer report.",
-                "textEquivalent": "Central Cancer Registry Report",
-                "code": [
-                  {
-                    "coding": [
-                      {
-                        "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
-                        "code": "create-report"
-                      }
-                    ]
-                  }
-                ],
-                "input": [
-                  {
-                    "id": "patient",
-                    "extension": [
-                      {
-                        "url": "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
-                        "valueString": "Patient/{{context.patientId}}"
-                      }
-                    ],
-                    "type": "Patient"
-                  },
-                  {
-                    "id": "encounter",
-                    "extension": [
-                      {
-                        "url": "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
-                        "valueString": "Encounter/{{context.encounterId}}"
-                      }
-                    ],
-                    "type": "Encounter"
-                  },
-                  {
-                    "id": "conditiondata",
-                    "extension": [
-                      {
-                        "url": "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
-                        "valueString": "Condition?patient=Patient/{{context.patientId}}&category=problem-list-item"
-                      }
-                    ],
-                    "type": "Condition",
-                    "profile": [
-                      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
-                    ]
-                  },
-                  {
-                    "id": "encounterDiagnosesData",
-                    "extension": [
-                      {
-                        "url": "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
-                        "valueString": "Condition?patient=Patient/{{context.patientId}}&category=encounter-diagnosis"
-                      }
-                    ],
-                    "type": "Condition",
-                    "profile": [
-                      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
-                    ]
-                  },
-                  {
-                    "id": "mrdata",
-                    "extension": [
-                      {
-                        "url": "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
-                        "valueString": "MedicationRequest?patient=Patient/{{context.patientId}}&intent=order"
-                      }
-                    ],
-                    "type": "MedicationRequest",
-                    "profile": [
-                      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
-                    ]
-                  },
-                  {
-                    "id": "medAdmdata",
-                    "extension": [
-                      {
-                        "url": "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
-                        "valueString": "MedicationAdministration?patient=Patient/{{context.patientId}}"
-                      }
-                    ],
-                    "type": "MedicationAdministration"
-                  },
-                  {
-                    "id": "medStatementdata",
-                    "extension": [
-                      {
-                        "url": "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
-                        "valueString": "MedicationStatement?patient=Patient/{{context.patientId}}"
-                      }
-                    ],
-                    "type": "MedicationStatement"
-                  },
-                  {
-                    "id": "procdata",
-                    "extension": [
-                      {
-                        "url": "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
-                        "valueString": "Procedure?patient=Patient/{{context.patientId}}"
-                      }
-                    ],
-                    "type": "Procedure",
-                    "profile": [
-                      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
-                    ]
-                  },
-                  {
-                    "id": "labResultdata",
-                    "extension": [
-                      {
-                        "url": "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
-                        "valueString": "Observation?patient=Patient/{{context.patientId}}"
-                      }
-                    ],
-                    "type": "Observation",
-                    "profile": [
-                      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
-                    ]
-                  },
-                  {
-                    "id": "labOrderdata",
-                    "extension": [
-                      {
-                        "url": "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension",
-                        "valueString": "labOrders"
-                      }
-                    ],
-                    "type": "ServiceRequest",
-                    "profile": [
-                      "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
-                    ]
-                  },
-                  {
-                    "id": "diagnosticResultdata",
-                    "extension": [
-                      {
-                        "url": "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
-                        "valueString": "DiagnosticReport?patient=Patient/{{context.patientId}}"
-                      }
-                    ],
-                    "type": "DiagnosticReport",
-                    "profile": [
-                      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab"
-                    ]
-                  },
-                  {
-                    "id": "docRefData",
-                    "extension": [
-                      {
-                        "url": "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
-                        "valueString": "DocumentReference?patient=Patient/{{context.patientId}}"
-                      }
-                    ],
-                    "type": "DocumentReference",
-                    "profile": [
-                      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"
-                    ]
-                  },
-                  {
-                    "id": "odhData-loinc",
-                    "extension": [
-                      {
-                        "url": "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
-                        "valueString": "Observation?patient=Patient/{{context.patientId}}&code=http://loinc.org|11295-3,11341-5,21843-8,74165-2"
-                      }
-                    ],
-                    "type": "Observation",
-                    "profile": [
-                      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-social-history"
-                    ]
-                  },
-                  {
-                    "id": "odhData-snomed",
-                    "extension": [
-                      {
-                        "url": "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
-                        "valueString": "Observation?patient=Patient/{{context.patientId}}&code=http://snomed.info/sct|224362002,364703007"
-                      }
-                    ],
-                    "type": "Observation",
-                    "profile": [
-                      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-social-history"
-                    ]
-                  },
-                  {
-                    "id": "vitals-data",
-                    "extension": [
-                      {
-                        "url": "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
-                        "valueString": "Observation?patient=Patient/{{context.patientId}}&category=http://terminology.hl7.org/CodeSystem/observation-category|vital-signs&date=ge{{context.encounterStartDate}}"
-                      }
-                    ],
-                    "type": "Observation"
-                  }
-                ],
-                "output": [
-                  {
-                    "id": "cancer-report",
-                    "type": "Bundle",
-                    "profile": [
-                      "http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-reporting-bundle"
-                    ]
-                  }
-                ],
-                "relatedAction": [
-                  {
-                    "actionId": "validate-report",
-                    "relationship": "before-start"
-                  }
-                ]
-              },
-              {
-                "id": "validate-cancer-report",
-                "description": "This action represents the validation of the cancer report.",
-                "textEquivalent": "Validate Report",
-                "code": [
-                  {
-                    "coding": [
-                      {
-                        "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
-                        "code": "validate-report"
-                      }
-                    ]
-                  }
-                ],
-                "input": [
-                  {
-                    "id": "created-cancer-report",
-                    "type": "Bundle",
-                    "profile": [
-                      "http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-reporting-bundle"
-                    ]
-                  }
-                ],
-                "output": [
-                  {
-                    "id": "validated-cancer-report",
-                    "type": "Bundle",
-                    "profile": [
-                      "http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-reporting-bundle"
-                    ]
-                  }
-                ],
-                "relatedAction": [
-                  {
-                    "actionId": "submit-report",
-                    "relationship": "before-start"
-                  }
-                ]
-              },
-              {
-                "id": "route-and-send-cancer-report",
-                "description": "This action represents the routing and sending of the cancer report.",
-                "textEquivalent": "Route and send cancer report",
-                "code": [
-                  {
-                    "coding": [
-                      {
-                        "system": "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
-                        "code": "submit-report"
-                      }
-                    ]
-                  }
-                ],
-                "input": [
-                  {
-                    "id": "val-cancer-report",
-                    "type": "Bundle",
-                    "profile": [
-                      "http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-reporting-bundle"
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
+            "system" : "http://snomed.info/sct",
+            "version" : "2024-03",
+            "code" : "424993006"
+          },
+          {
+            "system" : "http://snomed.info/sct",
+            "version" : "2024-03",
+            "code" : "353431000119107"
+          },
+          {
+            "system" : "http://snomed.info/sct",
+            "version" : "2024-03",
+            "code" : "363358000"
+          },
+          {
+            "system" : "http://snomed.info/sct",
+            "version" : "2024-03",
+            "code" : "722546002"
+          }]
       }
     }
-  ]
+  },
+    {
+      "fullUrl" : "http://hl7.org/fhir/us/central-cancer-registry-reporting/PlanDefinition/pccrre",
+      "resource" : {
+        "resourceType" : "PlanDefinition",
+        "id" : "pccrre",
+        "meta" : {
+          "versionId" : "1",
+          "lastUpdated" : "2020-11-29T02:03:28.045+00:00",
+          "profile" : ["http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-plandefinition"]
+        },
+        "text" : {
+          "status" : "extensions",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>Receiver Endpoint Address</b>: <a>Generated Summary: id: example-endpoint; status: active; <span title=\"{http://terminology.hl7.org/CodeSystem/endpoint-connection-type hl7-fhir-rest}\">HL7 FHIR</span>; name: PHAReceiver; endpointmanager@example.pha.org; period: 2020-11-20 --&gt; (ongoing); <span title=\"Codes: {http://hl7.org/fhir/resource-types Bundle}\">Bundle</span>; payloadMimeType: application/fhir+xml, payloadMimeType: application/fhir+json; address: http://example.pha.org/fhir</a></p><p><b>Author Signature</b>: </p><p><b style=\"color: maroon\">Exception generating Narrative: type org.hl7.fhir.r5.model.Signature not handled - should not be here</b></p></div>"
+        },
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-receiver-endpoint",
+          "valueReference" : {
+            "reference" : "Endpoint/example-ph-endpoint"
+          }
+        }],
+        "url" : "http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/pccrre",
+        "version" : "1.0",
+        "name" : "CentralCancerRegistryReportingExample",
+        "title" : "PlanDefinition Central Cancer Registry Reporting Example",
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+            "code" : "workflow-definition",
+            "display" : "Workflow Definition"
+          }]
+        },
+        "status" : "draft",
+        "experimental" : true,
+        "date" : "2020-11-04T12:32:29.858-05:00",
+        "publisher" : "HL7 Public Health Work Group",
+        "description" : "This is the Healthcare Survey Reporting Knowledge Artifact",
+        "effectivePeriod" : {
+          "start" : "2021-11-01"
+        },
+        "relatedArtifact" : [{
+          "type" : "depends-on",
+          "label" : "Central Cancer Registry Trigger Codes",
+          "resource" : "http://hl7.org/fhir/us/central-cancer-registry-reporting/ValueSet/cancer-core-reportability-codes"
+        }],
+        "action" : [{
+          "id" : "start-workflow",
+          "description" : "This action represents the start of the reporting workflow in response to the encounter-end event",
+          "textEquivalent" : "Start the reporting workflow in response to an encounter-end event",
+          "code" : [{
+            "coding" : [{
+              "system" : "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
+              "code" : "initiate-reporting-workflow"
+            }]
+          }],
+          "trigger" : [{
+            "id" : "encounter-close",
+            "extension" : [{
+              "url" : "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-named-eventtype",
+              "valueCodeableConcept" : {
+                "coding" : [{
+                  "system" : "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-triggerdefinition-namedevents",
+                  "code" : "encounter-end",
+                  "display" : "Indicates the end of an encounter"
+                }]
+              }
+            }],
+            "type" : "named-event",
+            "name" : "encounter-end"
+          }],
+          "relatedAction" : [{
+            "actionId" : "check-reportable",
+            "relationship" : "before-start",
+            "offsetDuration" : {
+              "value" : 72,
+              "system" : "http://unitsofmeasure.org",
+              "code" : "s"
+            }
+          }]
+        },
+          {
+            "id" : "check-reportable",
+            "description" : "This action represents the check for suspected reportability of the cancer data.",
+            "textEquivalent" : "Check Reportability and setup jobs for future reportability checks.",
+            "code" : [{
+              "coding" : [{
+                "system" : "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
+                "code" : "execute-reporting-workflow"
+              }]
+            }],
+            "action" : [{
+              "id" : "is-encounter-reportable",
+              "description" : "This action represents the check for reportability to create the patients eICR.",
+              "textEquivalent" : "Check Trigger Codes based on RCTC Value sets.",
+              "code" : [{
+                "coding" : [{
+                  "system" : "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
+                  "code" : "check-trigger-codes"
+                }]
+              }],
+              "condition" : [{
+                "kind" : "applicability",
+                "expression" : {
+                  "language" : "text/fhirpath",
+                  "expression" : "%conditions.exists()"
+                }
+              }],
+              "input" : [{
+                "id" : "conditions",
+                "extension" : [{
+                  "url" : "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                  "valueString" : "Condition?patient=Patient/{{context.patientId}}"
+                }],
+                "type" : "Condition",
+                "codeFilter" : [{
+                  "path" : "code",
+                  "valueSet" : "http://hl7.org/fhir/us/central-cancer-registry-reporting/ValueSet/cancer-core-reportability-codes"
+                }]
+              }],
+              "relatedAction" : [{
+                "actionId" : "report-cancer-data",
+                "relationship" : "before-start"
+              }]
+            },
+              {
+                "id" : "should-continue-reporting",
+                "code" : [{
+                  "coding" : [{
+                    "system" : "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
+                    "code" : "evaluate-condition"
+                  }]
+                }],
+                "condition" : [{
+                  "kind" : "applicability",
+                  "expression" : {
+                    "language" : "text/fhirpath",
+                    "expression" : "%patient.deceased.empty()"
+                  }
+                }],
+                "input" : [{
+                  "id" : "patient",
+                  "extension" : [{
+                    "url" : "http://hl7.org/fhir/us/medmorph/StructureDefinition/us-ph-fhirquerypattern-extension",
+                    "valueString" : "Patient/{{context.patientId}}"
+                  }],
+                  "type" : "Patient"
+                }],
+                "relatedAction" : [{
+                  "actionId" : "check-reportable",
+                  "relationship" : "before-start",
+                  "offsetDuration" : {
+                    "value" : 6,
+                    "system" : "http://unitsofmeasure.org",
+                    "code" : "m"
+                  }
+                }]
+              }]
+          },
+          {
+            "id" : "report-cancer-data",
+            "description" : "This action represents the creation, validation and submission of the cancer report.",
+            "textEquivalent" : "Check Reportability and setup jobs for future reportability checks.",
+            "code" : [{
+              "coding" : [{
+                "system" : "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
+                "code" : "execute-reporting-workflow"
+              }]
+            }],
+            "action" : [{
+              "id" : "create-cancer-report",
+              "description" : "This action represents the creation of the cancer report.",
+              "textEquivalent" : "Central Cancer Registry Report",
+              "code" : [{
+                "coding" : [{
+                  "system" : "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
+                  "code" : "create-report"
+                }]
+              }],
+              "input" : [{
+                "id" : "patient",
+                "extension" : [{
+                  "url" : "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
+                  "valueString" : "Patient/{{context.patientId}}"
+                }],
+                "type" : "Patient"
+              },
+                {
+                  "id" : "encounter",
+                  "extension" : [{
+                    "url" : "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
+                    "valueString" : "Encounter/{{context.encounterId}}"
+                  }],
+                  "type" : "Encounter"
+                },
+                {
+                  "id" : "conditiondata",
+                  "extension" : [{
+                    "url" : "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
+                    "valueString" : "Condition?patient=Patient/{{context.patientId}}&category=problem-list-item"
+                  }],
+                  "type" : "Condition",
+                  "profile" : ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"]
+                },
+                {
+                  "id" : "encounterDiagnosesData",
+                  "extension" : [{
+                    "url" : "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
+                    "valueString" : "Condition?patient=Patient/{{context.patientId}}&category=encounter-diagnosis"
+                  }],
+                  "type" : "Condition",
+                  "profile" : ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"]
+                },
+                {
+                  "id" : "mrdata",
+                  "extension" : [{
+                    "url" : "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
+                    "valueString" : "MedicationRequest?patient=Patient/{{context.patientId}}&intent=order"
+                  }],
+                  "type" : "MedicationRequest",
+                  "profile" : ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"]
+                },
+                {
+                  "id" : "medAdmdata",
+                  "extension" : [{
+                    "url" : "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
+                    "valueString" : "MedicationAdministration?patient=Patient/{{context.patientId}}"
+                  }],
+                  "type" : "MedicationAdministration"
+                },
+                {
+                  "id" : "medStatementdata",
+                  "extension" : [{
+                    "url" : "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
+                    "valueString" : "MedicationStatement?patient=Patient/{{context.patientId}}"
+                  }],
+                  "type" : "MedicationStatement"
+                },
+                {
+                  "id" : "procdata",
+                  "extension" : [{
+                    "url" : "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
+                    "valueString" : "Procedure?patient=Patient/{{context.patientId}}"
+                  }],
+                  "type" : "Procedure",
+                  "profile" : ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"]
+                },
+                {
+                  "id" : "labResultdata",
+                  "extension" : [{
+                    "url" : "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
+                    "valueString" : "Observation?patient=Patient/{{context.patientId}}"
+                  }],
+                  "type" : "Observation",
+                  "profile" : ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"]
+                },
+                {
+                  "id" : "labOrderdata",
+                  "extension" : [{
+                    "url" : "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension",
+                    "valueString" : "labOrders"
+                  }],
+                  "type" : "ServiceRequest",
+                  "profile" : ["http://hl7.org/fhir/StructureDefinition/ServiceRequest"]
+                },
+                {
+                  "id" : "diagnosticResultdata",
+                  "extension" : [{
+                    "url" : "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
+                    "valueString" : "DiagnosticReport?patient=Patient/{{context.patientId}}"
+                  }],
+                  "type" : "DiagnosticReport",
+                  "profile" : ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab"]
+                },
+                {
+                  "id" : "docRefData",
+                  "extension" : [{
+                    "url" : "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
+                    "valueString" : "DocumentReference?patient=Patient/{{context.patientId}}"
+                  }],
+                  "type" : "DocumentReference",
+                  "profile" : ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"]
+                },
+                {
+                  "id" : "odhData-loinc",
+                  "extension" : [{
+                    "url" : "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
+                    "valueString" : "Observation?patient=Patient/{{context.patientId}}&code=http://loinc.org|11295-3,11341-5,21843-8,74165-2"
+                  }],
+                  "type" : "Observation",
+                  "profile" : ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-social-history"]
+                },
+                {
+                  "id" : "odhData-snomed",
+                  "extension" : [{
+                    "url" : "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
+                    "valueString" : "Observation?patient=Patient/{{context.patientId}}&code=http://snomed.info/sct|224362002,364703007"
+                  }],
+                  "type" : "Observation",
+                  "profile" : ["http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-social-history"]
+                },
+                {
+                  "id" : "vitals-data",
+                  "extension" : [{
+                    "url" : "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-fhirquerypattern-extension",
+                    "valueString" : "Observation?patient=Patient/{{context.patientId}}&category=http://terminology.hl7.org/CodeSystem/observation-category|vital-signs&date=ge{{context.encounterStartDate}}"
+                  }],
+                  "type" : "Observation"
+                }],
+              "output" : [{
+                "id" : "cancer-report",
+                "type" : "Bundle",
+                "profile" : ["http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-reporting-bundle"]
+              }],
+              "relatedAction" : [{
+                "actionId" : "validate-report",
+                "relationship" : "before-start"
+              }]
+            },
+              {
+                "id" : "validate-cancer-report",
+                "description" : "This action represents the validation of the cancer report.",
+                "textEquivalent" : "Validate Report",
+                "code" : [{
+                  "coding" : [{
+                    "system" : "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
+                    "code" : "validate-report"
+                  }]
+                }],
+                "input" : [{
+                  "id" : "created-cancer-report",
+                  "extension" : [{
+                    "url" : "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension",
+                    "valueString" : "cancer-report"
+                  }],
+                  "type" : "Bundle",
+                  "profile" : ["http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-reporting-bundle"]
+                }],
+                "output" : [{
+                  "id" : "valid-cancer-report",
+                  "type" : "Bundle",
+                  "profile" : ["http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-reporting-bundle"]
+                }],
+                "relatedAction" : [{
+                  "actionId" : "submit-report",
+                  "relationship" : "before-start"
+                }]
+              },
+              {
+                "id" : "route-and-send-cancer-report",
+                "description" : "This action represents the routing and sending of the cancer report.",
+                "textEquivalent" : "Route and send cancer report",
+                "code" : [{
+                  "coding" : [{
+                    "system" : "http://hl7.org/fhir/us/medmorph/CodeSystem/us-ph-plandefinition-actions",
+                    "code" : "submit-report"
+                  }]
+                }],
+                "input" : [{
+                  "id" : "validated-cancer-report",
+                  "extension" : [{
+                    "url" : "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-relateddata-extension",
+                    "valueString" : "valid-cancer-report"
+                  }],
+                  "type" : "Bundle",
+                  "profile" : ["http://hl7.org/fhir/us/central-cancer-registry-reporting/StructureDefinition/ccrr-reporting-bundle"]
+                }]
+              }]
+          }]
+      }
+    }]
 }
