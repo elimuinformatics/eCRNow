@@ -118,7 +118,7 @@ public class ValidateReport extends BsaAction {
   }
 
   public void validateFhirOutput(KarProcessingData data, BsaActionStatus actStatus) {
-
+    logger.info("validateFhirOutput");
     OperationOutcome outcome = new OperationOutcome();
 
     try {
@@ -135,6 +135,8 @@ public class ValidateReport extends BsaAction {
               data.getDataForId(dr.getId(), this.getInputDataIdToRelatedDataIdMap());
           resourcesToValidate.addAll(resources);
         }
+      }else {
+        logger.info("in validateFhirOutput input was null");
       }
 
       for (Resource r : resourcesToValidate) {
