@@ -118,16 +118,19 @@ public class ValidateReport extends BsaAction {
   }
 
   public void validateFhirOutput(KarProcessingData data, BsaActionStatus actStatus) {
-    logger.info("validateFhirOutput");
+    logger.info("validateFhirOutput ...");
     OperationOutcome outcome = new OperationOutcome();
 
     try {
 
       List<DataRequirement> input = getInputData();
+      logger.info("found some input");
 
       Set<Resource> resourcesToValidate = new HashSet<>();
 
       if (input != null) {
+
+        logger.info("inout is not null");
 
         for (DataRequirement dr : input) {
 
