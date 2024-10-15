@@ -131,8 +131,11 @@ public class ValidateReport extends BsaAction {
       if (input != null) {
 
         logger.info("inout is not null");
+        logger.info("Validation endpoint {}", validatorEndpoint);
 
         for (DataRequirement dr : input) {
+
+          logger.info("DataRequirement:{}", dr.getId());
 
           Set<Resource> resources =
               data.getDataForId(dr.getId(), this.getInputDataIdToRelatedDataIdMap());
