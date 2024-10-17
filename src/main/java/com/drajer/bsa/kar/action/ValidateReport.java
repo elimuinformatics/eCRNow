@@ -130,7 +130,7 @@ public class ValidateReport extends BsaAction {
 
       if (input != null) {
 
-        logger.info("inout is not null");
+        logger.info("inout is not null, size is {}", input.size());
         logger.info("Validation endpoint {}", validatorEndpoint);
 
         for (DataRequirement dr : input) {
