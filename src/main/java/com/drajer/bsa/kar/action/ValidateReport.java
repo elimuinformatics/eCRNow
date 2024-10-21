@@ -204,6 +204,8 @@ public class ValidateReport extends BsaAction {
 
     } catch (Exception e) {
 
+      logger.error("Error in ValidateReport ", e);
+
       actStatus.setActionStatus(BsaActionStatusType.FAILED);
 
       outcome
