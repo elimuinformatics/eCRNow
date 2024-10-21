@@ -4,6 +4,7 @@ import com.drajer.bsa.ehr.service.EhrQueryService;
 import com.drajer.bsa.kar.model.BsaAction;
 import com.drajer.bsa.model.BsaTypes;
 import com.drajer.bsa.model.BsaTypes.MessageType;
+import com.drajer.bsa.model.BsaTypes.SectionTypeEnum;
 import com.drajer.bsa.model.HealthcareSetting;
 import com.drajer.bsa.model.KarProcessingData;
 import com.drajer.bsa.utils.ReportGenerationUtils;
@@ -79,8 +80,6 @@ public class HcsReportCreator extends ReportCreator {
   public static final String HCS_COMPOSITION =
       "http://hl7.org/fhir/us/health-care-surveys-reporting/StructureDefinition/hcs-composition";
 
-  private static final String HCS_REPORT_LOINC_CODE = "75619-7";
-  public static final String HCS_REPORT_TITLE = "Health Care Survey Report";
   private static final String VERSION_NUM_URL =
       "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber";
   private static final String DEVICE_NAME = "eCRNow/Backend Service App";
@@ -91,26 +90,6 @@ public class HcsReportCreator extends ReportCreator {
   public static final String REPORT_INITIATION_TYPE_CODE = "subscription-notification";
   public static final String MESSAGE_SIGNIFICANCE_CATEGORY =
       "http://hl7.org/fhir/ValueSet/message-significance-category";
-
-  public enum SectionTypeEnum {
-    REASON_FOR_VISIT,
-    ALLERGIES,
-    PROBLEM,
-    MEDICATION_ADMINISTERED,
-    ADMISSION_MEDICATIONS,
-    MEDICATIONS,
-    RESULTS,
-    NOTES,
-    PLAN_OF_TREATMENT,
-    IMMUNIZATIONS,
-    PROCEDURES,
-    VITAL_SIGNS,
-    SOCIAL_HISTORY,
-    MEDICAL_EQUIPMENT,
-    CARE_TEAM,
-    GOAL,
-    CARE_PLAN
-  }
 
   @Override
   public Resource createReport(
@@ -422,7 +401,7 @@ public class HcsReportCreator extends ReportCreator {
     if (practs != null && !practs.isEmpty()) resTobeAdded.addAll(practs);
 
     // Add title
-    comp.setTitle(HCS_REPORT_TITLE);
+    comp.setTitle(FhirGeneratorConstants.HCS_COMP_TYPE_CODE_DISPLAY);
 
     // Add Organization
     Organization org = ReportCreationUtilities.getOrganization(kd);
@@ -515,17 +494,12 @@ public class HcsReportCreator extends ReportCreator {
     // Add Care Team section.
     sc = getSection(SectionTypeEnum.CARE_TEAM, kd);
     if (sc != null) scs.add(sc);
-    addEntries(ResourceType.CareTeam, kd, sc, resTobeAdded);
+    addEntries(ResourceType.Device, kd, sc, resTobeAdded);
 
     // Add Goals section.
     sc = getSection(SectionTypeEnum.GOAL, kd);
     if (sc != null) scs.add(sc);
-    addEntries(ResourceType.Goal, kd, sc, resTobeAdded);
-
-    // Add Care Plan section.
-    sc = getSection(SectionTypeEnum.CARE_PLAN, kd);
-    if (sc != null) scs.add(sc);
-    addEntries(ResourceType.CarePlan, kd, sc, resTobeAdded);
+    addEntries(ResourceType.Device, kd, sc, resTobeAdded);
 
     // Finalize the sections.
     comp.setSection(scs);
@@ -720,14 +694,6 @@ public class HcsReportCreator extends ReportCreator {
                 FhirGeneratorConstants.LOINC_CS_URL,
                 FhirGeneratorConstants.GOALS_SECTION_LOINC_CODE,
                 FhirGeneratorConstants.GOALS_SECTION_LOINC_CODE_DISPLAY);
-        populateDefaultNarrative(sc, kd);
-        break;
-      case CARE_PLAN:
-        sc =
-            FhirGeneratorUtils.getSectionComponent(
-                FhirGeneratorConstants.LOINC_CS_URL,
-                FhirGeneratorConstants.CARE_PLAN_SECTION_LOINC_CODE,
-                FhirGeneratorConstants.CARE_PLAN_SECTION_LOINC_CODE_DISPLAY);
         populateDefaultNarrative(sc, kd);
         break;
 

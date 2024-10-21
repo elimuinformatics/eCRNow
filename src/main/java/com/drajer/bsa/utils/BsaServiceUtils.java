@@ -166,7 +166,7 @@ public class BsaServiceUtils {
 
   private static boolean matchesProfile(
       Resource res, CanonicalType drProfile, KarProcessingData kd) {
-    logger.info("KarProcessingData in matchesProfile:{}", kd);
+    logger.info("--KarProcessingData in matchesProfile:{}", kd);
     if (drProfile == null) {
       return true;
     } else if (!res.hasMeta() || !res.getMeta().hasProfile()) {

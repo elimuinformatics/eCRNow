@@ -1,15 +1,16 @@
 package com.drajer.bsa.controller;
 
 import com.drajer.bsa.model.RestApiBody;
-import com.drajer.bsa.service.KarParser;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.text.StringEscapeUtils;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * This controller is a sample controller showing how to receive restful messages from eCRNow App.
@@ -41,14 +42,5 @@ public class SampleRestApiReceiver {
     responseObject.put("status", "Success");
 
     return responseObject;
-  }
-
-  @Autowired KarParser parser;
-
-  @CrossOrigin
-  @GetMapping(value = "/api/karReload")
-  public String reloadKars() {
-    parser.loadKars();
-    return "done";
   }
 }

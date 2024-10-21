@@ -354,7 +354,7 @@ public class KarParserImpl implements KarParser {
 
   public void loadKarsFromDirectory(String dirName, String repoUrl, String repoName) {
 
-    logger.debug("Scanning KARs folder {}", karDirectory);
+    logger.debug("--Scanning KARs folder {}", karDirectory);
     // Load each of the Knowledge Artifact Bundles.
     File folder = new File(dirName);
 

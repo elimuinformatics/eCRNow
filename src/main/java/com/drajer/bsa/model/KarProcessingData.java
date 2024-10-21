@@ -726,8 +726,8 @@ public class KarProcessingData {
 
   public Set<Resource> getDataForId(String dataReqId, Map<String, String> relatedDataIds) {
 
-    logger.info("GetDataFor {}", dataReqId);
-    logger.info("Available IDs: {}", relatedDataIds.keySet());
+    logger.info("--GetDataFor {}", dataReqId);
+    logger.info("--Available IDs: {}", relatedDataIds.keySet());
     Set<Resource> resources = null;
 
     if (relatedDataIds != null && relatedDataIds.containsKey(dataReqId)) {
@@ -741,9 +741,9 @@ public class KarProcessingData {
   }
 
   public Set<Resource> getDataForId(String id, String relatedDataId) {
-    logger.info("getDataForId ({}, {})", id, relatedDataId);
-    logger.info("actionOutputDataById contains {}", actionOutputDataById.keySet());
-    logger.info("actionOutputData contains {}", actionOutputData.keySet());
+    logger.info("--getDataForId ({}, {})", id, relatedDataId);
+    logger.info("--actionOutputDataById contains {}", actionOutputDataById.keySet());
+    logger.info("--actionOutputData contains {}", actionOutputData.keySet());
     Set<Resource> resources = null;
     if (relatedDataId != null && actionOutputDataById.containsKey(relatedDataId)) {
 
