@@ -143,7 +143,7 @@ public class ValidateReport extends BsaAction {
           Map<String, HashMap<String, Resource>> actionOutputData = data.getActionOutputData();
           logger.info("--DEBUGGING ActionOutputData, size {}", actionOutputData.size());
 
-          if(resources.size()>0){
+          if(resources!=null){
             resourcesToValidate.addAll(resources);
           }else {
             logger.info("-- resources for id {} is empty", dr.getId());
