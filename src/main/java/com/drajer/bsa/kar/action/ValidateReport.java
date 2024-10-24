@@ -9,6 +9,7 @@ import com.drajer.bsa.model.BsaTypes.BsaActionStatusType;
 import com.drajer.bsa.model.BsaTypes.OutputContentType;
 import com.drajer.bsa.model.KarProcessingData;
 import com.drajer.cda.utils.CdaValidatorUtil;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.micrometer.core.instrument.util.StringUtils;
 import java.util.HashSet;
 import java.util.List;
@@ -139,7 +140,10 @@ public class ValidateReport extends BsaAction {
 
           Set<Resource> resources =
               data.getDataForId(dr.getId(), this.getInputDataIdToRelatedDataIdMap());
-          logger.info("--Resulting resources size: {}", resources.size());
+
+          logger.info("--Resulting resources size: {}", resources==null?"":resources.size());
+          ObjectMapper mapper = new ObjectMapper();
+          logger.info("-- KarProcessingData DUMP: {}", mapper.writeValueAsString(data));
           resourcesToValidate.addAll(resources);
         }
       } else {
