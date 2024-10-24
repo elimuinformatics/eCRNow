@@ -9,11 +9,7 @@ import com.drajer.bsa.model.BsaTypes.BsaActionStatusType;
 import com.drajer.bsa.model.BsaTypes.OutputContentType;
 import com.drajer.bsa.model.KarProcessingData;
 import com.drajer.cda.utils.CdaValidatorUtil;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.micrometer.core.instrument.util.StringUtils;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 import org.hl7.fhir.r4.model.DataRequirement;
 import org.hl7.fhir.r4.model.OperationOutcome;
 import org.hl7.fhir.r4.model.Resource;
@@ -21,6 +17,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Service
 public class ValidateReport extends BsaAction {
@@ -64,7 +64,7 @@ public class ValidateReport extends BsaAction {
 
       if (artStatus != null
           && (artStatus.getOutputFormat() == OutputContentType.CDA_R11
-              || artStatus.getOutputFormat() == OutputContentType.CDA_R30)) {
+          || artStatus.getOutputFormat() == OutputContentType.CDA_R30)) {
 
         logger.info(" Validating CDA Output ");
         validateCdaOutput(data, actStatus);
@@ -141,9 +141,7 @@ public class ValidateReport extends BsaAction {
           Set<Resource> resources =
               data.getDataForId(dr.getId(), this.getInputDataIdToRelatedDataIdMap());
 
-          logger.info("--Resulting resources size: {}", resources==null?"":resources.size());
-          ObjectMapper mapper = new ObjectMapper();
-          logger.info("-- KarProcessingData DUMP: {}", mapper.writeValueAsString(data));
+          logger.info("--Resulting resources size: {}", resources == null ? "null" : resources.size());
           resourcesToValidate.addAll(resources);
         }
       } else {
