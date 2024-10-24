@@ -18,9 +18,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class ValidateReport extends BsaAction {
@@ -142,6 +140,15 @@ public class ValidateReport extends BsaAction {
               data.getDataForId(dr.getId(), this.getInputDataIdToRelatedDataIdMap());
 
           logger.info("--Resulting resources size: {}", resources == null ? "null" : resources.size());
+          Map<String, HashMap<String, Resource>> actionOutputData = data.getActionOutputData();
+          logger.info("--DEBUGGING ActionOutputData, size {}", actionOutputData.size());
+          for(String dataid:actionOutputData.keySet()) {
+            try {
+              logger.info("-- DataID {} has {} resources", dataid, actionOutputData.get(dataid).size());
+            }catch (Exception x){
+              logger.error("Ignorable error", x);
+            }
+          }
           resourcesToValidate.addAll(resources);
         }
       } else {
