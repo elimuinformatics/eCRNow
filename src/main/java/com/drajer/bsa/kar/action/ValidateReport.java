@@ -142,11 +142,13 @@ public class ValidateReport extends BsaAction {
           logger.info("--Resulting resources size: {}", resources == null ? "null" : resources.size());
           Map<String, HashMap<String, Resource>> actionOutputData = data.getActionOutputData();
           logger.info("--DEBUGGING ActionOutputData, size {}", actionOutputData.size());
-          for(String dataid:actionOutputData.keySet()) {
-            try {
-              logger.info("-- DataID {} has {} resources", dataid, actionOutputData.get(dataid).size());
-            }catch (Exception x){
-              logger.error("Ignorable error", x);
+          if(actionOutputData.size()>0) {
+            for (String dataid : actionOutputData.keySet()) {
+              try {
+                logger.info("-- DataID {} has {} resources", dataid, actionOutputData.get(dataid).size());
+              } catch (Exception x) {
+                logger.error("Ignorable error", x);
+              }
             }
           }
           resourcesToValidate.addAll(resources);
