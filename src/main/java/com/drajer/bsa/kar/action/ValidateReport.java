@@ -117,40 +117,28 @@ public class ValidateReport extends BsaAction {
   }
 
   public void validateFhirOutput(KarProcessingData data, BsaActionStatus actStatus) {
-    logger.info("--validateFhirOutput ...");
+
     OperationOutcome outcome = new OperationOutcome();
 
     try {
 
       List<DataRequirement> input = getInputData();
-      logger.info("--found some input");
 
       Set<Resource> resourcesToValidate = new HashSet<>();
 
       if (input != null) {
 
-        logger.info("--input is not null, size is {}", input.size());
-        logger.info("--Validation endpoint {}", validatorEndpoint);
-
         for (DataRequirement dr : input) {
-
-          logger.info("--DataRequirement:{}", dr.getId());
 
           Set<Resource> resources =
               data.getDataForId(dr.getId(), this.getInputDataIdToRelatedDataIdMap());
 
-          logger.info("--Resulting resources size: {}", resources == null ? "null" : resources.size());
           Map<String, HashMap<String, Resource>> actionOutputData = data.getActionOutputData();
-          logger.info("--DEBUGGING ActionOutputData, size {}", actionOutputData.size());
 
           if(resources!=null){
             resourcesToValidate.addAll(resources);
-          }else {
-            logger.info("-- resources for id {} is empty", dr.getId());
           }
         }
-      } else {
-        logger.info("--in validateFhirOutput input was null");
       }
 
       for (Resource r : resourcesToValidate) {
