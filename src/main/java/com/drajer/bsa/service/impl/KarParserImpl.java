@@ -354,7 +354,6 @@ public class KarParserImpl implements KarParser {
 
   public void loadKarsFromDirectory(String dirName, String repoUrl, String repoName) {
 
-    logger.debug("--Scanning KARs folder {}", karDirectory);
     // Load each of the Knowledge Artifact Bundles.
     File folder = new File(dirName);
 
@@ -481,12 +480,9 @@ public class KarParserImpl implements KarParser {
 
     } else {
 
-      if (karBundle == null) {
-        logger.error(
-            " Bundle for Path : {} cannot be processed because it is either non existent ", kar);
-      } else {
-        logger.error(" Bundle for Path : {} is of type {} ", kar, karBundle.getType().toString());
-      }
+      logger.error(
+          " Bundle for Path : {} cannot be processed because it is either non existent or of the wrong bundle type.",
+          kar);
     }
   }
 

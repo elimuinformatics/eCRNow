@@ -10,6 +10,9 @@ import com.drajer.bsa.model.BsaTypes.OutputContentType;
 import com.drajer.bsa.model.KarProcessingData;
 import com.drajer.cda.utils.CdaValidatorUtil;
 import io.micrometer.core.instrument.util.StringUtils;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import org.hl7.fhir.r4.model.DataRequirement;
 import org.hl7.fhir.r4.model.OperationOutcome;
 import org.hl7.fhir.r4.model.Resource;
@@ -17,8 +20,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import java.util.*;
 
 @Service
 public class ValidateReport extends BsaAction {
@@ -62,7 +63,7 @@ public class ValidateReport extends BsaAction {
 
       if (artStatus != null
           && (artStatus.getOutputFormat() == OutputContentType.CDA_R11
-          || artStatus.getOutputFormat() == OutputContentType.CDA_R30)) {
+              || artStatus.getOutputFormat() == OutputContentType.CDA_R30)) {
 
         logger.info(" Validating CDA Output ");
         validateCdaOutput(data, actStatus);
@@ -132,12 +133,7 @@ public class ValidateReport extends BsaAction {
 
           Set<Resource> resources =
               data.getDataForId(dr.getId(), this.getInputDataIdToRelatedDataIdMap());
-
-          Map<String, HashMap<String, Resource>> actionOutputData = data.getActionOutputData();
-
-          if(resources!=null){
-            resourcesToValidate.addAll(resources);
-          }
+          resourcesToValidate.addAll(resources);
         }
       }
 
@@ -198,8 +194,6 @@ public class ValidateReport extends BsaAction {
       } // for each resource to be validated
 
     } catch (Exception e) {
-
-      logger.error("Error in ValidateReport ", e);
 
       actStatus.setActionStatus(BsaActionStatusType.FAILED);
 

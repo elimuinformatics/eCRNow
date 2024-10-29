@@ -123,14 +123,12 @@ public class KnowledgeArtifact {
         logger.info(" Value Set already present ");
       } else if (res.getUrl() != null) {
         resources.put(res.getUrl(), res);
-
         dependencies.put(res.getResourceType(), resources);
       }
     } else if (res.getUrl() != null) {
       logger.info("Resource Type does not exist, so add to map ");
       HashMap<String, Resource> resources = new HashMap<>();
       resources.put(res.getUrl(), res);
-
       dependencies.put(res.getResourceType(), resources);
     }
   }

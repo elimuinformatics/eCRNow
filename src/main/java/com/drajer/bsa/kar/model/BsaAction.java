@@ -530,13 +530,11 @@ public abstract class BsaAction {
   }
 
   public HashMap<String, String> getInputDataIdToRelatedDataIdMap() {
-
     return inputDataIdToRelatedDataIdMap;
   }
 
   public void setInputDataIdToRelatedDataIdMap(
       HashMap<String, String> inputDataIdToRelatedDataIdMap) {
-
     this.inputDataIdToRelatedDataIdMap = inputDataIdToRelatedDataIdMap;
   }
 
