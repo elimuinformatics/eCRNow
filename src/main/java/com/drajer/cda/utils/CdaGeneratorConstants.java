@@ -3,6 +3,7 @@ package com.drajer.cda.utils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Properties;
 import org.apache.commons.lang3.StringUtils;
 import org.javatuples.Pair;
@@ -211,6 +212,11 @@ public class CdaGeneratorConstants {
   public static final String HISTORY_OF_PRESENT_ILLNESS_SEC_CODE_NAME =
       "History of Present Illness";
   public static final String HISTORY_OF_PRESENT_ILLNESS_SEC_TITLE = "History of Present Illness";
+
+  public static final String CHIEF_COMPLAINT_SEC_TEMPLATE_ID = "1.3.6.1.4.1.19376.1.5.3.1.1.13.2.1";
+  public static final String CHIEF_COMPLAINT_SEC_CODE = "10154-3";
+  public static final String CHIEF_COMPLAINT_SEC_CODE_NAME = "CHIEF COMPLAINT";
+  public static final String CHIEF_COMPLAINT_SEC_TITLE = "CHIEF COMPLAINT";
 
   // Encounter Related Information
   public static final String EO_ENC_SEC_TEMPLATE_ID = "2.16.840.1.113883.10.20.22.2.22";
@@ -543,11 +549,47 @@ public class CdaGeneratorConstants {
   public static final String SNOMED_OCC_HISTORY_CODE_DISPLAY = "Employment Detail";
   public static final String LOINC_OCC_HISTORY_CODE = "11295-3";
   public static final String LOINC_OCC_HISTORY_CODE_DISPLAY = "Current employment - Reported";
+  public static final String EMPLOYMENT_STATUS_CODE = "74165-2";
+  public static final String EMPLOYMENT_STATUS_CODE_DISPLAY = "Employment Status";
+  public static final String EMPLOYMENT_STATUS_TEMPLATE_ID = "2.16.840.1.113883.10.20.22.4.212";
+  public static final String EMPLOYMENT_STATUS_TEMPLATE_ID_EXT = "2017-11-30";
+  public static final String USUAL_OCCUPATION_CODE = "21843-8";
+  public static final String USUAL_OCCUPATION_CODE_DISPLAY = "Usual Occupation";
+  public static final String USUAL_OCCUPATION_TEMPLATE_ID = "2.16.840.1.113883.10.20.22.4.221";
+  public static final String USUAL_OCCUPATION_TEMPLATE_ID_EXT = "2020-09-01";
+  public static final String USUAL_INDUSTRY_CODE = "21844-6";
+  public static final String USUAL_INDUSTRY_CODE_DISPLAY = "Usual Industry";
+  public static final String USUAL_INDUSTRY_TEMPLATE_ID = "2.16.840.1.113883.10.20.22.4.219";
+  public static final String USUAL_INDUSTRY_TEMPLATE_ID_EXT = "2020-09-01";
+  public static final String PAST_PRESENT_OCCUPATION_CODE = "11341-5";
+  public static final String PAST_PRESENT_OCCUPATION_CODE_DISPLAY = "Past or Present Occupation";
+  public static final String PAST_PRESENT_OCCUPATION_TEMPLATE_ID =
+      "2.16.840.1.113883.10.20.22.4.217";
+  public static final String PAST_PRESENT_OCCUPATION_TEMPLATE_ID_EXT = "2020-09-01";
+  public static final String PAST_PRESENT_INDUSTRY_CODE = "86188-0";
+  public static final String PAST_PRESENT_INDUSTRY_CODE_DISPLAY = "Past or Present Industry";
+  public static final String PAST_PRESENT_INDUSTRY_TEMPLATE_ID = "2.16.840.1.113883.10.20.22.4.216";
+  public static final String PAST_PRESENT_INDUSTRY_TEMPLATE_ID_EXT = "2020-09-01";
+  public static final String OCC_HAZARD_CODE = "87729-0";
+  public static final String OCC_HAZARD_CODE_DISPLAY = "Occupational Hazard";
+  public static final String OCC_HAZARD_TEMPLATE_ID = "2.16.840.1.113883.10.20.22.4.215";
+  public static final String OCC_HAZARD_TEMPLATE_ID_EXT = "2017-11-30";
+
   public static final String BIRTH_SEX_OBS_TEMPLATE_ID = "2.16.840.1.113883.10.20.22.4.200";
   public static final String BIRTH_SEX_OBS_TEMPLATE_ID_EXT = "2016-06-01";
   public static final String PREGNANCY_OBS_TEMPLATE_ID = "2.16.840.1.113883.10.20.15.3.8";
+  public static final String PREGNANCY_SUPPLEMENTAL_OBS_TEMPLATE_ID =
+      "2.16.840.1.113883.10.20.22.4.293";
+  public static final String PREGNANCY_SUPPLEMENTAL_OBS_TEMPLATE_ID_EXT = "2018-04-01";
 
   public static final String PREGNANCY_EDOD_OBS_TEMPLATE_ID = "2.16.840.1.113883.10.20.15.3.1";
+  public static final String PREGNANCY_SUPPLEMENTAL_EDOD_OBS_TEMPLATE_ID =
+      "2.16.840.1.113883.10.20.22.4.297";
+  public static final String PREGNANCY_SUPPLEMENTAL_EDOD_OBS_TEMPLATE_ID_EXT = "2018-04-01";
+  public static final String PREGNANCY_SUPPLEMENTAL_GEST_AGE_TEMPLATE_ID =
+      "2.16.840.1.113883.10.20.22.4.280";
+  public static final String PREGNANCY_SUPPLEMENTAL_GEST_AGE_TEMPLATE_ID_EXT = "2018-04-01";
+
   public static final String TRAVEL_HISTORY_OBS_TEMPLATE_ID = "2.16.840.1.113883.10.20.15.2.3.1";
   public static final String PLANNED_OBS_TEMPLATE_ID = "2.16.840.1.113883.10.20.22.4.44";
   public static final String PLANNED_OBS_TEMPLATE_ID_EXT = "2014-06-09";
@@ -557,6 +599,9 @@ public class CdaGeneratorConstants {
   public static final String LAB_TEST_RESULT_OBSERVATION_TRIGGER_TEMPLATE =
       "2.16.840.1.113883.10.20.15.2.3.2";
   public static final String LAB_TEST_RESULT_OBSERVATION_TRIGGER_TEMPLATE_EXT = "2016-12-01";
+  public static final String PLANNED_PROCEDURE_TRIGGER_CODE_TEMPLATE =
+      "2.16.840.1.113883.10.20.15.2.3.42";
+  public static final String PLANNED_PROCEDURE_TRIGGER_CODE_TEMPLATE_EXT = "2021-01-01";
   public static final String TRAVEL_HISTORY_OBS_TEMPLATE_ID_EXT = "2016-12-01";
   public static final String TRAVEL_HISTORY_SNOMED_CODE = "420008001";
   public static final String TRAVEL_HISTORY_SNOMED_CODE_DISPLAY = "Travel";
@@ -564,16 +609,44 @@ public class CdaGeneratorConstants {
   public static final String BIRTH_SEX_DISPLAY = "Birth Sex";
   public static final String PREGNANCY_CONDITION_DISPLAY = "Pregnancy Condition";
   public static final String PREGNANCY_OBSERVATION_DISPLAY = "Pregnancy Observation";
+  public static final String LAST_MENSTRUAL_PERIOD_DISPLAY = "Last Menstrual Period";
   public static final String OCCUPATION_HISTORY_DISPLAY = "Occupation History";
   public static final String TRAVEL_HISTORY_DISPLAY = "Travel History";
   public static final String BIRTH_SEX_CODESYSTEM_OID = "2.16.840.1.113883.5.1";
   public static final String BIRTH_SEX_CODESYSTEM_NAME = "Administrative Gender";
+
+  public static final String PREGNANCY_SECTION_TEMPLATE_ID = "2.16.840.1.113883.10.20.22.2.80";
+  public static final String PREGNANCY_SECTION_TEMPLATE_ID_EXT = "2018-04-01";
+  public static final String PREGNANCY_SECTION_CODE = "90767-5";
+  public static final String PREGNANCY_SECTION_NAME = "Pregnancy summary Document";
+  public static final String PREGNANCY_SECTION_TITLE = "Pregnancy Section";
+  public static final String LMP_TEMPLATE_ID = "2.16.840.1.113883.10.20.30.3.34";
+  public static final String LMP_TEMPLATE_ID_EXT = "2014-06-09";
+  public static final String LMP_CODE = "8665-2";
+  public static final String LMP_DISPLAY = "Last Menstrual Period";
+  public static final String PP_TEMPLATE_ID = "2.16.840.1.113883.10.20.22.4.285";
+  public static final String PP_TEMPLATE_ID_EXT = "2018-04-01";
+  public static final String PP_CODE = "249197004";
+  public static final String PP_DISPLAY =
+      "Maternal condition during puerperium (observable entity)";
+  public static final String PREG_OUTCOME_TEMPLATE_ID = "2.16.840.1.113883.10.20.22.4.284";
+  public static final String PREG_OUTCOME_TEMPLATE_ID_EXT = "2018-04-01";
+  public static final String PREG_OUTCOME_CODE = "63893-2";
+  public static final String PREG_OUTCOME_DISPLAY = "Outcome of Pregnancy";
 
   public static final String PREGNANCY_ESTIMATED_DELIVERY_DATE_CODE = "11778-8";
   public static final String PREGNANCY_ESTIMATED_DELIVERY_DATE_CODESYSTEM_OID =
       "2.16.840.1.113883.6.1";
   public static final String PREGNANCY_ESTIMATED_DELIVERY_DATE_DISPLAY_NAME =
       "Estimated date of delivery";
+
+  // ODH RElated Information
+  public static final String ODH_SECTION_TEMPLATE_ID = "2.16.840.1.113883.10.20.22.2.17";
+  public static final String ODH_SECTION_TEMPLATE_ID_EXT = "2020-09-01";
+  public static final String ODH_SECTION_CODE = "29762-2";
+  public static final String ODH_SECTION_CODE_DISPLAY = "SOCIAL HISTORY-ODH";
+  public static final String ODH_SECTION_TITLE = "SOCIAL HISTORY-ODH";
+
   // Payer Related Information.
   public static final String PAYERS_SEC_TEMPLATE_ID = "2.16.840.1.113883.10.20.22.2.18";
   public static final String PAYERS_SEC_TEMPLATE_ID_EXT = "2015-08-01";
@@ -689,12 +762,14 @@ public class CdaGeneratorConstants {
   public static final String SUPPLY_CLASS_CODE = "SPLY";
   public static final String PROC_CLASS_CODE = "PROC";
   public static final String PCPR_CLASS_CODE = "PCPR";
+  public static final String SPECIMEN_ROLE_CLASS_CODE = "SPEC";
   public static final String ACT_CLASS_CODE = "ACT";
   public static final String ORGANIZER_CLASS_CODE_CLUSTER = "CLUSTER";
   public static final String ENTRY_REL_SUBJ_CODE = "SUBJ";
   public static final String MANU_CLASS_CODE = "MANU";
   public static final String MANU_MATERIAL_CLASS_CODE = "MMAT";
   public static final String SDLOC_CLASS_CODE = "SDLOC";
+  public static final String ROL_CLASS_CODE = "ROL";
   public static final String ENTRY_REL_REFR_CODE = "REFR";
   public static final String ENTRY_REL_RSON_CODE = "RSON";
   public static final String ENTRY_REL_COMP_CODE = "COMP";
@@ -705,6 +780,7 @@ public class CdaGeneratorConstants {
   public static final String TYPE_CODE_CONS = "CSM";
   public static final String TYPE_CODE_LOC = "LOC";
   public static final String TYPE_CODE_PRD = "PRD";
+  public static final String TYPE_CODE_SPECIMEN = "SPC";
   public static final String US_REALM_CODE_VAL = "US";
   public static final String TERR = "TERR";
   // Element Names
@@ -813,6 +889,9 @@ public class CdaGeneratorConstants {
   public static final String PLAYING_DEVICE = "playingDevice";
   public static final String SCOPING_ENTITY = "scopingEntity";
   public static final String PLAYING_ENTITY = "playingEntity";
+  public static final String SPECIMEN_EL_NAME = "specimen";
+  public static final String SPECIMEN_ROLE_EL_NAME = "specimenRole";
+  public static final String SPECIMEN_PLAYING_ENTITY = "specimenPlayingEntity";
 
   // Acts
   public static final String ENC_ACT_EL_NAME = "encounter";
@@ -909,6 +988,10 @@ public class CdaGeneratorConstants {
   public static final String MED_TABLE_COL_1_BODY_CONTENT = "medication";
   public static final String MED_TABLE_COL_2_TITLE = "Medication Start Date";
   public static final String MED_TABLE_COL_2_BODY_CONTENT = "medicationDate";
+  public static final String MED_COL_1_TITLE = "Medication Name";
+  public static final String MED_COL_1_BODY_CONTENT = "med";
+  public static final String MED_COL_2_TITLE = "Medication Start Date";
+  public static final String MED_COL_2_BODY_CONTENT = "medDate";
   public static final String IMM_TABLE_COL_1_TITLE = "Vaccine Name";
   public static final String IMM_TABLE_COL_1_BODY_CONTENT = "vaccine";
   public static final String IMM_TABLE_COL_2_TITLE = "Vaccination Date";
@@ -921,6 +1004,19 @@ public class CdaGeneratorConstants {
   public static final String SOC_HISTORY_TABLE_COL_1_BODY_CONTENT = "socContent";
   public static final String SOC_HISTORY_TABLE_COL_2_TITLE = "Social History Observation Result";
   public static final String SOC_HISTORY_TABLE_COL_2_BODY_CONTENT = "socObservationResult";
+  public static final String PREGNANCY_OBSERVATION_TABLE_COL_1_TITLE = "Pregnancy Information";
+  public static final String PREGNANCY_OBSERVATION_TABLE_COL_1_BODY_CONTENT = "pregInfo";
+  public static final String PREGNANCY_OBSERVATION_TABLE_COL_2_TITLE = "Observed Pregnancy Result";
+  public static final String PREGNANCY_OBSERVATION_TABLE_COL_2_BODY_CONTENT = "pregResult";
+  public static final String PREGNANCY_LMP_OBSERVATION_TABLE_COL_1_BODY_CONTENT = "lmpInfo";
+  public static final String PREGNANCY_LMP_OBSERVATION_TABLE_COL_2_BODY_CONTENT = "lmpResult";
+
+  public static final String ODH_TABLE_COL_1_TITLE = "Occupational History Observation";
+  public static final String ODH_TABLE_COL_1_BODY_CONTENT = "occHist";
+  public static final String ODH_TABLE_COL_2_TITLE = "Occupational History Observation Result";
+  public static final String ODH_TABLE_COL_2_BODY_CONTENT = "occHistResult";
+
+  public static final String PREGNANCY_STATUS = "Pregnancy Status";
   public static final String POT_OBS_TABLE_COL_1_TITLE = "Planned Observation";
   public static final String POT_OBS_TABLE_COL_1_BODY_CONTENT = "potObsContent";
   public static final String POT_OBS_TABLE_COL_2_TITLE = "Planned Observation Date";
@@ -947,6 +1043,13 @@ public class CdaGeneratorConstants {
   public static final String DSTU2_FHIR_CONTACT_RELATIONSHIP_CODESYSTEM =
       "http://hl7.org/fhir/patient-contact-relationship";
 
+  public static final String EstimatedDateofDeliveryValueset = "2.16.840.1.113883.11.20.9.81";
+  public static final String EstimatedDateofDeliveryExtUrl =
+      "http://hl7.org/fhir/us/ecr/StructureDefinition/us-ph-date-determined-extension";
+  public static final String OdhCurrentJobExtension =
+      "http://hl7.org/fhir/us/odh/StructureDefinition/odh-isCurrentJob-extension";
+  public static final String GestationalAgeEstimatedValueset = "2.16.840.1.113883.11.20.9.82";
+
   // CDA eICR versions supported
   public static final String CDA_EICR_VERSION_R11 = "CDA_R11";
   public static final String CDA_EICR_VERSION_R31 = "CDA_R31";
@@ -957,6 +1060,8 @@ public class CdaGeneratorConstants {
   private static HashMap<String, Pair<String, String>> dstu2oidMap = new HashMap<>();
   private static HashMap<String, Pair<String, String>> dstu2uriMap = new HashMap<>();
   private static HashMap<String, HashMap<String, String>> fhirToCdaTerminologyMap = new HashMap<>();
+
+  private static HashMap<String, HashSet<String>> valueSetToCodes = new HashMap<>();
 
   // Map to hold OID to Name
   private static HashMap<String, String> oidNameMap = new HashMap<>();
@@ -1014,9 +1119,65 @@ public class CdaGeneratorConstants {
             });
       }
 
+      InputStream vsFile =
+          CdaGeneratorConstants.class
+              .getClassLoader()
+              .getResourceAsStream("EstimatedDateofDeliveryValueset.properties");
+      {
+        Properties prop4 = new Properties();
+        prop4.load(vsFile);
+
+        prop4.forEach(
+            (key, value) -> {
+              if (valueSetToCodes.containsKey(EstimatedDateofDeliveryValueset)) {
+                valueSetToCodes.get(EstimatedDateofDeliveryValueset).add((String) key);
+              } else {
+                valueSetToCodes.put(EstimatedDateofDeliveryValueset, new HashSet<String>());
+                valueSetToCodes.get(EstimatedDateofDeliveryValueset).add((String) key);
+              }
+            });
+      }
+
+      InputStream gsFile =
+          CdaGeneratorConstants.class
+              .getClassLoader()
+              .getResourceAsStream("GestationalAgeEstimatedValueset.properties");
+      {
+        Properties prop5 = new Properties();
+        prop5.load(vsFile);
+
+        prop5.forEach(
+            (key, value) -> {
+              if (valueSetToCodes.containsKey(GestationalAgeEstimatedValueset)) {
+                valueSetToCodes.get(GestationalAgeEstimatedValueset).add((String) key);
+              } else {
+                valueSetToCodes.put(GestationalAgeEstimatedValueset, new HashSet<String>());
+                valueSetToCodes.get(GestationalAgeEstimatedValueset).add((String) key);
+              }
+            });
+      }
+
     } catch (IOException ex) {
       logger.error("Error while loading OID to URI from properties files", ex);
     }
+  }
+
+  public static Boolean isCodePresentInValueSet(String valueset, String code) {
+
+    if (valueSetToCodes != null && valueSetToCodes.containsKey(valueset)) {
+
+      String found =
+          valueSetToCodes
+              .get(valueset)
+              .stream()
+              .filter(value -> code.contentEquals(value))
+              .findAny()
+              .orElse(null);
+
+      if (found != null) return true;
+    }
+
+    return false;
   }
 
   /**

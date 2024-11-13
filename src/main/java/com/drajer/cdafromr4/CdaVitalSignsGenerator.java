@@ -23,7 +23,8 @@ public class CdaVitalSignsGenerator {
 
   private static final Logger logger = LoggerFactory.getLogger(CdaVitalSignsGenerator.class);
 
-  public static String generateVitalsSection(R4FhirData data, LaunchDetails details) {
+  public static String generateVitalsSection(
+      R4FhirData data, LaunchDetails details, String version) {
 
     StringBuilder hsb = new StringBuilder(5000);
     StringBuilder sb = new StringBuilder(2000);
@@ -214,7 +215,7 @@ public class CdaVitalSignsGenerator {
 
     Boolean foundComponent = false;
 
-    if (obs.hasComponent() && obs.getComponent() != null) {
+    if (obs.hasComponent()) {
 
       CodeableConcept cc = obs.getCode();
       Type val = obs.getValue();
@@ -226,15 +227,15 @@ public class CdaVitalSignsGenerator {
       for (ObservationComponentComponent oc : obs.getComponent()) {
 
         logger.debug("Found Observation Components ");
-        if (oc.getCode() != null) {
+        if (oc.hasCode()) {
           cc = oc.getCode();
         }
 
-        if (oc.getValue() != null) {
+        if (oc.hasValue()) {
           val = oc.getValue();
         }
 
-        if (oc.getInterpretation() != null) {
+        if (oc.hasInterpretation()) {
           interpretation = oc.getInterpretation();
         }
 
@@ -318,7 +319,8 @@ public class CdaVitalSignsGenerator {
             CdaGeneratorConstants.CODE_EL_NAME,
             false,
             CdaGeneratorConstants.FHIR_LOINC_URL,
-            false, contentRef));
+            false,
+            contentRef));
 
     lrEntry.append(
         CdaGeneratorUtils.getXmlForCD(
@@ -404,15 +406,12 @@ public class CdaVitalSignsGenerator {
 
     if (data.getVitalObs() != null && !data.getVitalObs().isEmpty()) {
 
-      logger.info("Total num of Lab Vitals available for Patient {}", data.getVitalObs().size());
+      logger.info("Total num of Vitals available for Patient {}", data.getVitalObs().size());
 
       for (Observation s : data.getVitalObs()) {
 
         if (s.hasCode()
-            && s.getCode() != null
             && s.getCode().hasCoding()
-            && s.getCode().getCoding() != null
-            && !s.getCode().getCoding().isEmpty()
             && Boolean.TRUE.equals(
                 CdaFhirUtilities.isCodingPresentForCodeSystem(
                     s.getCode().getCoding(), CdaGeneratorConstants.FHIR_LOINC_URL))) {
@@ -429,6 +428,7 @@ public class CdaVitalSignsGenerator {
       logger.debug("No Valid Lab Vitals in the bundle to process");
     }
 
+    logger.info("Total num of Vitals available for Patient after filtering {}", sr.size());
     return sr;
   }
 }
